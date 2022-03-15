@@ -1,0 +1,19 @@
+.home {
+  background-color: #eaeded;
+  display: flex;
+  justify-content: center;
+}
+.home__content {
+  width: 1500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  top: -11.5%;
+}
