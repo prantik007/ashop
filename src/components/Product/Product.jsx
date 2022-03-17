@@ -7,8 +7,25 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
+import { useState } from "react";
+import { useStateValue } from "../../State/StateProvider";
+
 const Product = (props) => {
 const {id, name, rating, price, imageURL} = props.product;
+
+const [state,dispatch] = useStateValue();
+const handleAddToBasket =()=>{
+  dispatch({
+    type:"ADD_TO_BASKET",
+    item:{
+      id:id,
+      name:name,
+      imageURL:imageURL,
+      price:price,
+      qty:1
+    }
+  })
+}
 
 
   return (
@@ -29,7 +46,7 @@ const {id, name, rating, price, imageURL} = props.product;
       <CardMedia component="img" height="200px" image={imageURL} alt={name} />
 
       <CardActions>
-        <button className="button">Add to Basket</button>
+        <button onClick={handleAddToBasket} className="button">Add to Basket</button>
       </CardActions>
     </Card>
   );

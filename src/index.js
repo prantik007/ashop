@@ -4,12 +4,15 @@ import './index.css';
 import App from './App';
 import bootstrap from 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import reducer, {initialState} from './State/reducer'
+import {StateProvider} from './State/StateProvider'
 
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <StateProvider initialState={initialState} reducer={reducer}>
+  <App />
+  </StateProvider>
+  ,
   document.getElementById('root')
 );
 

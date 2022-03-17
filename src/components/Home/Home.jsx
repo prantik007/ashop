@@ -7,7 +7,7 @@ import { Grid } from "@mui/material";
 import { ProductList } from "../../assets/Data/ProductList";
 
 const Home = () => {
-  console.log(ProductList[0])
+  console.log('Home',ProductList)
   return (
     <div className="home">
       <div className="home__content">
