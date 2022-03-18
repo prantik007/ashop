@@ -5,6 +5,7 @@ import CheckoutProducts from "../CheckoutProducts/CheckoutProducts";
 import { ProductList } from "../../assets/Data/ProductList.js";
 import { useStateValue } from "../../State/StateProvider";
 import { getBasketTotal } from "../../State/reducer";
+import ButtonAshop from "../UI/ButtonAshop";
 const Checkout = () => {
  const [{basket},dispatch] = useStateValue();
 
@@ -30,7 +31,7 @@ const basketTotal=getBasketTotal(basket).toFixed(2);
         </div>
         <br/>
         <div>
-        <button className="button">Proceed to checkout</button>
+        <ButtonAshop > Proceed to Checkout </ButtonAshop>
         </div>
       </div>
     </div>

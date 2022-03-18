@@ -14,6 +14,7 @@ import Stack from '@mui/material/Stack';
 
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import ButtonAshop from "../UI/ButtonAshop";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -75,7 +76,8 @@ const handleAddToBasket =()=>{
       <CardMedia component="img" height="200px" image={imageURL} alt={name} />
 
       <CardActions>
-        <button onClick={handleAddToBasket} className="button">Add to Basket</button>
+        
+        <ButtonAshop onClick={handleAddToBasket}> Add to Basket </ButtonAshop>
       </CardActions>
       <Stack spacing={2} sx={{ width: '100%' }}>
       

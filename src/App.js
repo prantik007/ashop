@@ -4,6 +4,7 @@ import Home from "./components/Home/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Checkout from "./components/Checkout/Checkout";
 import Invalid from "./components/InvalidPage/Invalid";
+import Login from "./components/Login/Login";
 
 
 
@@ -16,6 +17,7 @@ function App() {
         <Routes>
          <Route exact path="/" element={<Home />} />
          <Route exact path="/checkout" element={<Checkout />}/>
+         <Route exact path="/login" element={<Login/>} />
          <Route exact path="/*" element={<Invalid />}/>
         </Routes>
       </Router>

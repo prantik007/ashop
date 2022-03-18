@@ -2,8 +2,8 @@ import React from "react";
 import Product from "../Product/Product";
 import "./CheckoutProducts.css";
 
-
 import { useStateValue } from "../../State/StateProvider";
+import ButtonAshop from "../UI/ButtonAshop";
 
 const CheckoutProducts = (props) => {
   const { id, name, rating, price, imageURL, qty } = props.item;
@@ -23,7 +23,7 @@ const CheckoutProducts = (props) => {
     });
   };
 
-  const handleAddToCart = () => {
+  const handleAddToBasket = () => {
     dispatch({
       type: "ADD_TO_BASKET",
       item: {
@@ -34,8 +34,6 @@ const CheckoutProducts = (props) => {
         qty: 1,
       },
     });
-
-    
   };
 
   return (
@@ -50,17 +48,19 @@ const CheckoutProducts = (props) => {
             <h4>{name}</h4>
             <div className="basket__itemPriceAndButton">
               <div style={{ fontWeight: "bold", padding: "5px" }}>
-                <button className="button" onClick={handleAddToCart} style={{
+                <ButtonAshop
+                  onClick={handleAddToBasket}
+                  style={{
                     fontWeight: "bold",
                     padding: "5px",
                     margin: "5px",
                     width: "30px",
-                  }}>
+                  }}
+                >
                   {" "}
                   +{" "}
-                </button>
-                <button
-                  className="button"
+                </ButtonAshop>
+                <ButtonAshop
                   onClick={handleRemoveFromBasket}
                   style={{
                     fontWeight: "bold",
@@ -71,7 +71,7 @@ const CheckoutProducts = (props) => {
                 >
                   {" "}
                   -{" "}
-                </button>
+                </ButtonAshop>
               </div>
 
               <h4>
@@ -84,12 +84,10 @@ const CheckoutProducts = (props) => {
                 </button>
               </span>
             </div>
-            
           </div>
         </div>
       }
       <hr />
-      
     </div>
   );
 };
