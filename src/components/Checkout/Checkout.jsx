@@ -9,7 +9,7 @@ const Checkout = () => {
  const [{basket},dispatch] = useStateValue();
 
 const basketLength=basket?.length;
-const basketTotal=getBasketTotal(basket);
+const basketTotal=getBasketTotal(basket).toFixed(2);
  console.log(basket)
   return (
     <div className="checkout__container">
